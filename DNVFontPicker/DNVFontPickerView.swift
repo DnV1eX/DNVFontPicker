@@ -45,11 +45,23 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     
-    var fontNames = UIFont.familyNames
+    public var fontNames = UIFont.familyNames {
+        didSet {
+            fontPickerView.reloadComponent(0)
+        }
+    }
     
-    var fontSizes = [7, 8, 9, 10, 11, 12, 14, 16, 18, 24, 36, 48, 64] as [Int]?
+    public var fontSizes = [7, 8, 9, 10, 11, 12, 14, 16, 18, 24, 36, 48, 64] as [CGFloat]? {
+        didSet {
+            fontPickerView.reloadAllComponents()
+        }
+    }
     
-    var fontColors = DNVFontPickerView.colors(count: 16)
+    public var fontColors = DNVFontPickerView.colors(count: 16) {
+        didSet {
+            fontPickerView.reloadAllComponents()
+        }
+    }
     
     
     static func colors(count: Int) -> [UIColor]? {
@@ -72,6 +84,16 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         }
         return colors
     }
+    
+    
+    var attributes = [String : Any]() {
+        didSet {
+            onUpdate?(attributes)
+        }
+    }
+    
+    
+    public var onUpdate: ((_ attributes: [String : Any]) -> ())?
     
     
     override init(frame: CGRect) {
@@ -156,6 +178,23 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
             
         case .fontColor:
             return pickerView.bounds.width / 6
+        }
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        switch PickerComponent(component, forPicker: self)! {
+        case .fontName:
+            let font = UIFont(name: fontNames[row], size: (attributes[NSFontAttributeName] as? UIFont)?.pointSize ?? fontSizes?[row] ?? UIFont.systemFontSize)!
+            attributes[NSFontAttributeName] = font
+            
+        case .fontSize:
+            let font = (attributes[NSFontAttributeName] as? UIFont)?.withSize(fontSizes![row]) ?? UIFont(name: fontNames[row], size: fontSizes![row])!
+            attributes[NSFontAttributeName] = font
+            
+        case .fontColor:
+            attributes[NSForegroundColorAttributeName] = fontColors![row]
         }
     }
 }

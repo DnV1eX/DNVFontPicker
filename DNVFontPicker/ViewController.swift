@@ -20,6 +20,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fontPickerView.onUpdate = { attributes in
+            let attributedString = self.textView.attributedText.mutableCopy() as! NSMutableAttributedString
+            attributedString.setAttributes(attributes, range: NSRange(location: 0, length: attributedString.length))
+            self.textView.attributedText = attributedString.copy() as! NSAttributedString
+        }
         textView.inputAccessoryView = fontPickerView.toolbar
         textView.inputView = fontPickerView
     }
