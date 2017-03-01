@@ -14,6 +14,7 @@
 		ECF9009F1E652DEC00A566B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF9009D1E652DEC00A566B7 /* LaunchScreen.storyboard */; };
 		ECF900AA1E652DEC00A566B7 /* DNVFontPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF900A91E652DEC00A566B7 /* DNVFontPickerTests.swift */; };
 		ECF900B51E652DEC00A566B7 /* DNVFontPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF900B41E652DEC00A566B7 /* DNVFontPickerUITests.swift */; };
+		ECF900C31E652EBD00A566B7 /* DNVFontPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF900C21E652EBD00A566B7 /* DNVFontPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		ECF900B01E652DEC00A566B7 /* DNVFontPickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DNVFontPickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF900B41E652DEC00A566B7 /* DNVFontPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNVFontPickerUITests.swift; sourceTree = "<group>"; };
 		ECF900B61E652DEC00A566B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECF900C21E652EBD00A566B7 /* DNVFontPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNVFontPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		ECF900931E652DEC00A566B7 /* DNVFontPicker */ = {
 			isa = PBXGroup;
 			children = (
+				ECF900C21E652EBD00A566B7 /* DNVFontPickerView.swift */,
 				ECF900941E652DEC00A566B7 /* AppDelegate.swift */,
 				ECF900961E652DEC00A566B7 /* ViewController.swift */,
 				ECF900981E652DEC00A566B7 /* Main.storyboard */,
@@ -264,6 +267,7 @@
 			files = (
 				ECF900971E652DEC00A566B7 /* ViewController.swift in Sources */,
 				ECF900951E652DEC00A566B7 /* AppDelegate.swift in Sources */,
+				ECF900C31E652EBD00A566B7 /* DNVFontPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
