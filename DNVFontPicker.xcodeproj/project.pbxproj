@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ECF900951E652DEC00A566B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF900941E652DEC00A566B7 /* AppDelegate.swift */; };
+		ECF900971E652DEC00A566B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF900961E652DEC00A566B7 /* ViewController.swift */; };
+		ECF9009A1E652DEC00A566B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF900981E652DEC00A566B7 /* Main.storyboard */; };
+		ECF9009C1E652DEC00A566B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECF9009B1E652DEC00A566B7 /* Assets.xcassets */; };
+		ECF9009F1E652DEC00A566B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF9009D1E652DEC00A566B7 /* LaunchScreen.storyboard */; };
+		ECF900AA1E652DEC00A566B7 /* DNVFontPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF900A91E652DEC00A566B7 /* DNVFontPickerTests.swift */; };
+		ECF900B51E652DEC00A566B7 /* DNVFontPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF900B41E652DEC00A566B7 /* DNVFontPickerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ECF900A61E652DEC00A566B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECF900891E652DEC00A566B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECF900901E652DEC00A566B7;
+			remoteInfo = DNVFontPicker;
+		};
+		ECF900B11E652DEC00A566B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECF900891E652DEC00A566B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECF900901E652DEC00A566B7;
+			remoteInfo = DNVFontPicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ECF900911E652DEC00A566B7 /* DNVFontPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNVFontPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECF900941E652DEC00A566B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ECF900961E652DEC00A566B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ECF900991E652DEC00A566B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ECF9009B1E652DEC00A566B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ECF9009E1E652DEC00A566B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ECF900A01E652DEC00A566B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECF900A51E652DEC00A566B7 /* DNVFontPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DNVFontPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECF900A91E652DEC00A566B7 /* DNVFontPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNVFontPickerTests.swift; sourceTree = "<group>"; };
+		ECF900AB1E652DEC00A566B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECF900B01E652DEC00A566B7 /* DNVFontPickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DNVFontPickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECF900B41E652DEC00A566B7 /* DNVFontPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNVFontPickerUITests.swift; sourceTree = "<group>"; };
+		ECF900B61E652DEC00A566B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECF9008E1E652DEC00A566B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECF900A21E652DEC00A566B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECF900AD1E652DEC00A566B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ECF900881E652DEC00A566B7 = {
+			isa = PBXGroup;
+			children = (
+				ECF900931E652DEC00A566B7 /* DNVFontPicker */,
+				ECF900A81E652DEC00A566B7 /* DNVFontPickerTests */,
+				ECF900B31E652DEC00A566B7 /* DNVFontPickerUITests */,
+				ECF900921E652DEC00A566B7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ECF900921E652DEC00A566B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECF900911E652DEC00A566B7 /* DNVFontPicker.app */,
+				ECF900A51E652DEC00A566B7 /* DNVFontPickerTests.xctest */,
+				ECF900B01E652DEC00A566B7 /* DNVFontPickerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECF900931E652DEC00A566B7 /* DNVFontPicker */ = {
+			isa = PBXGroup;
+			children = (
+				ECF900941E652DEC00A566B7 /* AppDelegate.swift */,
+				ECF900961E652DEC00A566B7 /* ViewController.swift */,
+				ECF900981E652DEC00A566B7 /* Main.storyboard */,
+				ECF9009B1E652DEC00A566B7 /* Assets.xcassets */,
+				ECF9009D1E652DEC00A566B7 /* LaunchScreen.storyboard */,
+				ECF900A01E652DEC00A566B7 /* Info.plist */,
+			);
+			path = DNVFontPicker;
+			sourceTree = "<group>";
+		};
+		ECF900A81E652DEC00A566B7 /* DNVFontPickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				ECF900A91E652DEC00A566B7 /* DNVFontPickerTests.swift */,
+				ECF900AB1E652DEC00A566B7 /* Info.plist */,
+			);
+			path = DNVFontPickerTests;
+			sourceTree = "<group>";
+		};
+		ECF900B31E652DEC00A566B7 /* DNVFontPickerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ECF900B41E652DEC00A566B7 /* DNVFontPickerUITests.swift */,
+				ECF900B61E652DEC00A566B7 /* Info.plist */,
+			);
+			path = DNVFontPickerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ECF900901E652DEC00A566B7 /* DNVFontPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECF900B91E652DEC00A566B7 /* Build configuration list for PBXNativeTarget "DNVFontPicker" */;
+			buildPhases = (
+				ECF9008D1E652DEC00A566B7 /* Sources */,
+				ECF9008E1E652DEC00A566B7 /* Frameworks */,
+				ECF9008F1E652DEC00A566B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DNVFontPicker;
+			productName = DNVFontPicker;
+			productReference = ECF900911E652DEC00A566B7 /* DNVFontPicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ECF900A41E652DEC00A566B7 /* DNVFontPickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECF900BC1E652DEC00A566B7 /* Build configuration list for PBXNativeTarget "DNVFontPickerTests" */;
+			buildPhases = (
+				ECF900A11E652DEC00A566B7 /* Sources */,
+				ECF900A21E652DEC00A566B7 /* Frameworks */,
+				ECF900A31E652DEC00A566B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECF900A71E652DEC00A566B7 /* PBXTargetDependency */,
+			);
+			name = DNVFontPickerTests;
+			productName = DNVFontPickerTests;
+			productReference = ECF900A51E652DEC00A566B7 /* DNVFontPickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ECF900AF1E652DEC00A566B7 /* DNVFontPickerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECF900BF1E652DEC00A566B7 /* Build configuration list for PBXNativeTarget "DNVFontPickerUITests" */;
+			buildPhases = (
+				ECF900AC1E652DEC00A566B7 /* Sources */,
+				ECF900AD1E652DEC00A566B7 /* Frameworks */,
+				ECF900AE1E652DEC00A566B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECF900B21E652DEC00A566B7 /* PBXTargetDependency */,
+			);
+			name = DNVFontPickerUITests;
+			productName = DNVFontPickerUITests;
+			productReference = ECF900B01E652DEC00A566B7 /* DNVFontPickerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECF900891E652DEC00A566B7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Alexey Demin";
+				TargetAttributes = {
+					ECF900901E652DEC00A566B7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Y575ZV84LS;
+						ProvisioningStyle = Automatic;
+					};
+					ECF900A41E652DEC00A566B7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Y575ZV84LS;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ECF900901E652DEC00A566B7;
+					};
+					ECF900AF1E652DEC00A566B7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Y575ZV84LS;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ECF900901E652DEC00A566B7;
+					};
+				};
+			};
+			buildConfigurationList = ECF9008C1E652DEC00A566B7 /* Build configuration list for PBXProject "DNVFontPicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ECF900881E652DEC00A566B7;
+			productRefGroup = ECF900921E652DEC00A566B7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECF900901E652DEC00A566B7 /* DNVFontPicker */,
+				ECF900A41E652DEC00A566B7 /* DNVFontPickerTests */,
+				ECF900AF1E652DEC00A566B7 /* DNVFontPickerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ECF9008F1E652DEC00A566B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECF9009F1E652DEC00A566B7 /* LaunchScreen.storyboard in Resources */,
+				ECF9009C1E652DEC00A566B7 /* Assets.xcassets in Resources */,
+				ECF9009A1E652DEC00A566B7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECF900A31E652DEC00A566B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECF900AE1E652DEC00A566B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECF9008D1E652DEC00A566B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECF900971E652DEC00A566B7 /* ViewController.swift in Sources */,
+				ECF900951E652DEC00A566B7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECF900A11E652DEC00A566B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECF900AA1E652DEC00A566B7 /* DNVFontPickerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECF900AC1E652DEC00A566B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECF900B51E652DEC00A566B7 /* DNVFontPickerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ECF900A71E652DEC00A566B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECF900901E652DEC00A566B7 /* DNVFontPicker */;
+			targetProxy = ECF900A61E652DEC00A566B7 /* PBXContainerItemProxy */;
+		};
+		ECF900B21E652DEC00A566B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECF900901E652DEC00A566B7 /* DNVFontPicker */;
+			targetProxy = ECF900B11E652DEC00A566B7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ECF900981E652DEC00A566B7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECF900991E652DEC00A566B7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ECF9009D1E652DEC00A566B7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECF9009E1E652DEC00A566B7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ECF900B71E652DEC00A566B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ECF900B81E652DEC00A566B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ECF900BA1E652DEC00A566B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y575ZV84LS;
+				INFOPLIST_FILE = DNVFontPicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DnV1eX.DNVFontPicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		ECF900BB1E652DEC00A566B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y575ZV84LS;
+				INFOPLIST_FILE = DNVFontPicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DnV1eX.DNVFontPicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		ECF900BD1E652DEC00A566B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Y575ZV84LS;
+				INFOPLIST_FILE = DNVFontPickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DnV1eX.DNVFontPickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DNVFontPicker.app/DNVFontPicker";
+			};
+			name = Debug;
+		};
+		ECF900BE1E652DEC00A566B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Y575ZV84LS;
+				INFOPLIST_FILE = DNVFontPickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DnV1eX.DNVFontPickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DNVFontPicker.app/DNVFontPicker";
+			};
+			name = Release;
+		};
+		ECF900C01E652DEC00A566B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = Y575ZV84LS;
+				INFOPLIST_FILE = DNVFontPickerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DnV1eX.DNVFontPickerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DNVFontPicker;
+			};
+			name = Debug;
+		};
+		ECF900C11E652DEC00A566B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = Y575ZV84LS;
+				INFOPLIST_FILE = DNVFontPickerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DnV1eX.DNVFontPickerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DNVFontPicker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECF9008C1E652DEC00A566B7 /* Build configuration list for PBXProject "DNVFontPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECF900B71E652DEC00A566B7 /* Debug */,
+				ECF900B81E652DEC00A566B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECF900B91E652DEC00A566B7 /* Build configuration list for PBXNativeTarget "DNVFontPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECF900BA1E652DEC00A566B7 /* Debug */,
+				ECF900BB1E652DEC00A566B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ECF900BC1E652DEC00A566B7 /* Build configuration list for PBXNativeTarget "DNVFontPickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECF900BD1E652DEC00A566B7 /* Debug */,
+				ECF900BE1E652DEC00A566B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ECF900BF1E652DEC00A566B7 /* Build configuration list for PBXNativeTarget "DNVFontPickerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECF900C01E652DEC00A566B7 /* Debug */,
+				ECF900C11E652DEC00A566B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ECF900891E652DEC00A566B7 /* Project object */;
+}
