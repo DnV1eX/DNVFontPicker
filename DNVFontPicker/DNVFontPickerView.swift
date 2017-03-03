@@ -11,15 +11,15 @@ import UIKit
 
 class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    let fontPickerView = UIPickerView()
+    public let pickerView = UIPickerView()
     
-    
+    /*
     var toolbar: UIToolbar {
         let toolbar = UIToolbar()
         toolbar.bounds.size.height = 44
         return toolbar
     }
-    
+    */
     
     enum PickerComponent {
         case fontName, fontSize, fontColor
@@ -45,26 +45,27 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     
-    public var fontNames = UIFont.familyNames {
+    public var fontNames = NSArray(array: [UIFont.systemFont(ofSize: UIFont.systemFontSize).familyName]).addingObjects(from: UIFont.familyNames) as! [String] {
         didSet {
-            fontPickerView.reloadComponent(0)
+            pickerView.reloadComponent(0)
         }
     }
     
     public var fontSizes = [7, 8, 9, 10, 11, 12, 14, 16, 18, 24, 36, 48, 64] as [CGFloat]? {
         didSet {
-            fontPickerView.reloadAllComponents()
+            fontSizes?.sort()
+            pickerView.reloadAllComponents()
         }
     }
     
     public var fontColors = DNVFontPickerView.colors(count: 16) {
         didSet {
-            fontPickerView.reloadAllComponents()
+            pickerView.reloadAllComponents()
         }
     }
     
     
-    static func colors(count: Int) -> [UIColor]? {
+    public static func colors(count: Int) -> [UIColor]? {
         
         if count < 1 {
             return nil
@@ -86,32 +87,50 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     
-    var attributes = [String : Any]() {
-        didSet {
-            onUpdate?(attributes)
-        }
-    }
-    
-    
-    public var onUpdate: ((_ attributes: [String : Any]) -> ())?
+    private var font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
     
     
     override init(frame: CGRect) {
         
         super.init(frame: frame)
         
-        bounds.size.height = 200
+        autoresizingMask = .flexibleHeight
         
-        fontPickerView.frame = bounds
-        fontPickerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        fontPickerView.dataSource = self
-        fontPickerView.delegate = self
-        addSubview(fontPickerView)
+        pickerView.frame = bounds
+        pickerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        addSubview(pickerView)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    public func update(attributes: [String: Any]) {
+        
+        font = attributes[NSFontAttributeName] as? UIFont ?? UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        pickerView.selectRow(fontNames.index(of: font.familyName) ?? 0, inComponent: 0, animated: false)
+        
+        if let fontSizes = fontSizes {
+            if fontSizes.index(of: font.pointSize) == nil {
+                self.fontSizes!.append(font.pointSize)
+            }
+            pickerView.selectRow(self.fontSizes!.index(of: font.pointSize)!, inComponent: 1, animated: false)
+        }
+        
+        if let fontColors = fontColors {
+            let color = attributes[NSForegroundColorAttributeName] as? UIColor ?? .black
+            if fontColors.index(of: color) == nil {
+                self.fontColors!.append(color)
+            }
+            pickerView.selectRow(self.fontColors!.index(of: color)!, inComponent: (fontSizes == nil ? 1 : 2), animated: false)
+        }
+    }
+    
+    
+    public var onUpdate: ((_ attributes: [String: Any]) -> ())?
     
     
     // MARK: - UIPickerViewDataSource
@@ -156,7 +175,8 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         case .fontSize:
             let fontSizeLabel = UILabel()
             fontSizeLabel.textAlignment = .center
-            fontSizeLabel.text = String(describing: fontSizes![row])
+            let size = fontSizes![row]
+            fontSizeLabel.text = (size.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.f", size) : String(describing: size))
             return fontSizeLabel
             
         case .fontColor:
@@ -186,15 +206,16 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         
         switch PickerComponent(component, forPicker: self)! {
         case .fontName:
-            let font = UIFont(name: fontNames[row], size: (attributes[NSFontAttributeName] as? UIFont)?.pointSize ?? fontSizes?[row] ?? UIFont.systemFontSize)!
-            attributes[NSFontAttributeName] = font
+            font = UIFont(name: fontNames[row], size: font.pointSize)!
+            onUpdate?([NSFontAttributeName: font])
             
         case .fontSize:
-            let font = (attributes[NSFontAttributeName] as? UIFont)?.withSize(fontSizes![row]) ?? UIFont(name: fontNames[row], size: fontSizes![row])!
-            attributes[NSFontAttributeName] = font
+            font = font.withSize(fontSizes![row])
+            onUpdate?([NSFontAttributeName: font])
             
         case .fontColor:
-            attributes[NSForegroundColorAttributeName] = fontColors![row]
+            let color = fontColors![row]
+            onUpdate?([NSForegroundColorAttributeName: color])
         }
     }
 }

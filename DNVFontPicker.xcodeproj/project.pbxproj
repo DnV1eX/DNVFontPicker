@@ -518,6 +518,7 @@
 				ECF900BB1E652DEC00A566B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECF900BC1E652DEC00A566B7 /* Build configuration list for PBXNativeTarget "DNVFontPickerTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +527,7 @@
 				ECF900BE1E652DEC00A566B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECF900BF1E652DEC00A566B7 /* Build configuration list for PBXNativeTarget "DNVFontPickerUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +536,7 @@
 				ECF900C11E652DEC00A566B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
