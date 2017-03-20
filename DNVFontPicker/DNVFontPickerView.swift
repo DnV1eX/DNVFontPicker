@@ -5,6 +5,18 @@
 //  Created by Alexey Demin on 2017-02-28.
 //  Copyright © 2017 Alexey Demin. All rights reserved.
 //
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+//
 
 import UIKit
 
@@ -12,18 +24,19 @@ import UIKit
 typealias PickerViewComponent = DNVFontPickerView.PickerViewComponent
 typealias ToolbarComponent = DNVFontPickerView.ToolbarComponent
 
-protocol PickerComponent { }
+
+public protocol PickerComponent { }
 
 
-extension UIFont {
+public extension UIFont {
     
-    open class var systemFontFamilyName: String {
+    class var systemFontFamilyName: String {
         
         return UIFont.systemFont(ofSize: UIFont.systemFontSize).familyName
     }
     
     
-    open func withFamilyName(_ fontFamilyName: String) -> UIFont {
+    func withFamilyName(_ fontFamilyName: String) -> UIFont {
         
         if let fontDescriptor = fontDescriptor.withFamily(fontFamilyName).matchingFontDescriptors(withMandatoryKeys: [UIFontDescriptorFamilyAttribute]).first {
             return UIFont(descriptor: fontDescriptor, size: pointSize)
@@ -50,12 +63,12 @@ extension UIFont {
 }
 
 
-class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
+public class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
 
     public let pickerView = UIPickerView()
     
     
-    var toolbar: UIToolbar {
+    public var toolbar: UIToolbar {
         let toolbar = UIToolbar()
         toolbar.bounds.size.height = 44
         
@@ -99,13 +112,19 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
                     textView.typingAttributes[NSForegroundColorAttributeName] = color
                     
                 case let ToolbarComponent.isUnderlined(underlined):
-                    break
+                    let underlineStyle: NSUnderlineStyle = (underlined ? .styleSingle : .styleNone)
+                    attributedString.addAttribute(NSUnderlineStyleAttributeName, value: underlineStyle, range: selectedRange)
+                    textView.typingAttributes[NSUnderlineStyleAttributeName] = underlineStyle
                     
                 case let ToolbarComponent.isStrikethrough(strikethrough):
-                    break
+                    let strikethroughStyle: NSUnderlineStyle = (strikethrough ? .styleSingle : .styleNone)
+                    attributedString.addAttribute(NSStrikethroughStyleAttributeName, value: strikethroughStyle, range: selectedRange)
+                    textView.typingAttributes[NSStrikethroughStyleAttributeName] = strikethroughStyle
                     
                 case let ToolbarComponent.isHighlighted(highlighted):
-                    break
+                    let backgroundColor: UIColor? = (highlighted ? .yellow : nil)
+                    attributedString.addAttribute(NSBackgroundColorAttributeName, value: backgroundColor as Any, range: selectedRange)
+                    textView.typingAttributes[NSBackgroundColorAttributeName] = backgroundColor
                     
                 default:
                     break
@@ -118,13 +137,13 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     
-    enum ToolbarComponent: PickerComponent {
+    public enum ToolbarComponent: PickerComponent {
         
         case isBold(Bool), isItalic(Bool), isUnderlined(Bool), isStrikethrough(Bool), isHighlighted(Bool)
     }
     
     
-    enum PickerViewComponent: PickerComponent {
+    public enum PickerViewComponent: PickerComponent {
         
         case fontFamily(String), fontSize(CGFloat), fontColor(UIColor)
         
@@ -154,7 +173,7 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     
-    public var fontFamilies: [String] = [UIFont.systemFontFamilyName] + UIFont.familyNames {
+    public var fontFamilies: [String] = [UIFont.systemFontFamilyName] + UIFont.familyNames.sorted() {
         didSet {
             if !fontFamilies.contains(UIFont.systemFontFamilyName) {
                 fontFamilies.insert(UIFont.systemFontFamilyName, at: 0)
@@ -183,10 +202,10 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
             return nil
         }
         
-        var colors: [UIColor] = [.black]
+        var colors: [UIColor] = [UIColor(red: 0, green: 0, blue: 0, alpha: 1)]
         
         if count > 1 {
-            colors.append(.gray)
+            colors.append(UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1))
         }
         
         if count > 2 {
@@ -195,6 +214,11 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
                 colors.append(color)
             }
         }
+        
+        for (i, color) in colors.enumerated() {
+            colors[i] = UIColor(cgColor: CGColor(colorSpace: color.cgColor.colorSpace!, components: color.cgColor.components!.map{ round($0 * 0xff) / 0xff })!)
+        }
+        
         return colors
     }
     
@@ -209,10 +233,11 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         pickerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         pickerView.dataSource = self
         pickerView.delegate = self
+        pickerView.showsSelectionIndicator = true
         addSubview(pickerView)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -241,16 +266,18 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     
     public var onUpdate: ((_ component: PickerComponent) -> ())?
     
+    public var onUpdate_objc: ((_ attributeName: String, _ value: Any) -> ())?
+    
     
     // MARK: - UIPickerViewDataSource
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
         return PickerViewComponent.count(forPicker: self)
     }
     
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         switch PickerViewComponent(component, forPicker: self)! {
         case .fontFamily:
@@ -267,7 +294,7 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: - UIPickerViewDelegate
     
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+    public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
         if let view = view {
             return view
@@ -296,7 +323,7 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     
-    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+    public func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         
         switch PickerViewComponent(component, forPicker: self)! {
         case .fontFamily:
@@ -311,11 +338,23 @@ class DNVFontPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        onUpdate?(PickerViewComponent(component, forPicker: self, selectedRow: row)!)
+        let pickerViewComponent = PickerViewComponent(component, forPicker: self, selectedRow: row)!
+        
+        onUpdate?(pickerViewComponent)
+        
+        if let onUpdate = onUpdate_objc {
+            switch pickerViewComponent {
+            case let .fontFamily(family):
+                onUpdate(UIFontDescriptorFamilyAttribute, family)
+            case let .fontSize(size):
+                onUpdate(UIFontDescriptorSizeAttribute, size as NSNumber)
+            case let .fontColor(color):
+                onUpdate(NSForegroundColorAttributeName, color)
+            }
+        }
     }
-    
     
     
     // MARK: - UIBarButtonItem Actions

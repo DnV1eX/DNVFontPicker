@@ -35,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC33EC0C1E6DC41D002546CE /* DNVFontPicker.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = DNVFontPicker.podspec; sourceTree = "<group>"; };
+		ECAE621C1E802B9A00A6290C /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		ECF900911E652DEC00A566B7 /* DNVFontPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNVFontPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF900941E652DEC00A566B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECF900961E652DEC00A566B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,8 @@
 				ECF900A81E652DEC00A566B7 /* DNVFontPickerTests */,
 				ECF900B31E652DEC00A566B7 /* DNVFontPickerUITests */,
 				ECF900921E652DEC00A566B7 /* Products */,
+				EC33EC0C1E6DC41D002546CE /* DNVFontPicker.podspec */,
+				ECAE621C1E802B9A00A6290C /* LICENSE.txt */,
 			);
 			sourceTree = "<group>";
 		};
@@ -362,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -406,7 +410,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
