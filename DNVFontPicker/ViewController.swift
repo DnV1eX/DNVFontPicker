@@ -35,7 +35,7 @@ class ViewController: UIViewController, UITextViewDelegate {
     }
     
     
-    func keyboardWillChangeFrame(notification: Notification) {
+    @objc func keyboardWillChangeFrame(notification: Notification) {
         
         guard let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
             let animationDuration = (notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue,

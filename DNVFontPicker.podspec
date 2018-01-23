@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "DNVFontPicker"
-  s.version      = "0.1"
+  s.version      = "0.2"
   s.summary      = "DNVFontPicker is an iOS input view intended to assign font and character attributes."
 
   # This description is used to generate tags and improve search results.
@@ -36,5 +36,6 @@ Pod::Spec.new do |s|
   s.source_files = "DNVFontPicker/DNVFontPickerView.swift"
 
   s.requires_arc = true
+  s.pod_target_xcconfig = { "SWIFT_VERSION" => "4.0" }
 
 end
